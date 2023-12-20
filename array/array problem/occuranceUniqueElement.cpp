@@ -37,9 +37,10 @@ int frequencyGiver(int arr[],int n){
 }
 int main(){
     int n;
-    cout<<"enter n";
-    cin>>n;
-    int arr[n]={2,2,3,3,5,5,6,6};
+    /*cout<<"enter n";
+    cin>>n;*/
+    int arr[8]={2,2,3,3,5,1 ,6,6};
+    n=8;
      int decision =frequencyGiver(arr,n);
      cout<<decision;
 }
