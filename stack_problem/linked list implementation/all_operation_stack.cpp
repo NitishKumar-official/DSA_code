@@ -23,36 +23,33 @@ public:
         top = NULL;
     }
 
-    int isEmpty()
+    void isEmpty()
     {
         if (top == NULL)
         {
-            // cout << "stack is underflow" << endl;
-            return 1;
+            cout << "stack is empty" << endl;
         }
         else
         {
-            // cout << "element are exist ine the stack";
-            return 0;
+            cout << "element stack is not empty"<<endl;
         }
     }
-    int isFull()
+    void isFull()
     {
         Node *p;
         if (p == NULL)
         {
-            // cout<<"stack is overflow"<<endl;
-            return 1;
+            cout << "stack is full" << endl;
         }
         else
         {
-            // cout<<"space are avilable in stack"<<endl;
-            return 0;
+            cout << "stack is not full" << endl;
         }
     }
     void pushItem()
     {
-        if (isFull())
+        Node *p;
+        if (p == NULL)
         {
             cout << "stack is overflow" << endl;
         }
@@ -67,26 +64,28 @@ public:
             return;
         }
     }
-    void popItem(){
-        if(isEmpty()){
-            cout<<"stack is underflow"<<endl;
+    void popItem()
+    {
+        if (top == NULL)
+        {
+            cout << "stack is underflow" << endl;
         }
-        else{
-           Node* ptr=top;
-           top=top->next;
+        else
+        {
+            Node *ptr = top;
+            top = top->next;
             free(ptr);
             return;
-            
-
         }
-
     }
 
-    void display(){
-        Node* ptr=top;
-        while(ptr!=NULL){
-            cout<<ptr->val<<endl;
-            ptr=ptr->next;
+    void display()
+    {
+        Node *ptr = top;
+        while (ptr != NULL)
+        {
+            cout << ptr->val << endl;
+            ptr = ptr->next;
         }
     }
 };
@@ -94,13 +93,35 @@ public:
 int main()
 {
     stack_opr stk;
-    stk.isEmpty();
-    stk.isFull();
-    stk.pushItem();
-    stk.pushItem();
-    stk.display();
-    cout<<"pop"<<endl;
-    stk.popItem();
-    stk.display();
+
+    do
+    {
+        int choice;
+        cout << "1.IsEmpty 2.Isfull 3.pushItem 4.popItem 5.Display 6. exit" << endl;
+        cout << "enter your choice:";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            stk.isEmpty();
+            break;
+        case 2:
+            stk.isFull();
+            break;
+        case 3:
+            stk.pushItem();
+            break;
+        case 4:
+            stk.popItem();
+            break;
+        case 5:
+            stk.display();
+            break;
+        default:
+            exit(0);
+            break;
+        }
+    } while (true);
     return 0;
 }
