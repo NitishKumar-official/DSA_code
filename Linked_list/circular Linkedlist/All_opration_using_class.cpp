@@ -120,8 +120,8 @@ public:
 
         while (ptr1->next != head)
         {
-            //ptr = ptr->next;
-            ptr=ptr1;
+            // ptr = ptr->next;
+            ptr = ptr1;
             ptr1 = ptr1->next;
         }
         ptr->next = head;
@@ -153,7 +153,7 @@ int main()
         {
         case 1:
             cll.inser_at_first();
-            break; 
+            break;
         case 2:
             cll.inset_in_between();
             break;
